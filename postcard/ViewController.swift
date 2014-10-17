@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         enterMessageTextfield.resignFirstResponder()
         //hides the keyboard after you hit the button. () tells you it's a function
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
-        //changes text on button
+        //changes text on button, fun stuff
     }
 
 }
