@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterNameText: UITextField!
     @IBOutlet weak var enterMessageTextfield: UITextField!
     @IBOutlet weak var mailButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
 
 
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     @IBAction func sendMailButtonPressed(sender: UIButton) {
         //anything in these brackets will execute when button is pressed
         messageLabel.hidden = false
+        nameLabel.hidden = false
         //variable.attribute = state/declaration
         messageLabel.text = enterMessageTextfield.text
         //always declare the item you want to effect first
@@ -38,9 +40,16 @@ class ViewController: UIViewController {
         //clears text field
         enterMessageTextfield.resignFirstResponder()
         //hides the keyboard after you hit the button. () tells you it's a function
+        nameLabel.text = enterNameText.text
+        nameLabel.textColor = UIColor.blueColor()
+        enterNameText.text = ""
+        //makes the top label display text from name label
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
         //changes text on button, fun stuff
     }
 
 }
 
+/*                          Fun Notes for Cool Cats-
+In the line where you were trying to clear the textfield for Enter Name, you have to put it BELOW the line that says nameLabel.text = enterNameText.text, otherwise it will hide the Name Label and you dont want that. Order is important! 
+*/
